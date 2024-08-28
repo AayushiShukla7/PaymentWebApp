@@ -22,6 +22,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// This HAS to be placed here**
+// Make sure to remove the '/' at the end of the URL path
+app.UseCors(options => 
+    options.WithOrigins("http://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader());
+
 app.UseAuthorization();
 
 app.MapControllers();
