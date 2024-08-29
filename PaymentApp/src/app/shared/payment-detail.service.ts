@@ -10,6 +10,7 @@ export class PaymentDetailService {
 
   url: string = environment.apiBaseURL + "PaymentDetails";
   list: PaymentDetail[] = [];
+  formData: PaymentDetail = new PaymentDetail();
 
   constructor(private http: HttpClient) { }
 

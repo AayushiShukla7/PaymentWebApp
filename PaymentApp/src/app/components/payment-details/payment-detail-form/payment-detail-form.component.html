@@ -1,1 +1,49 @@
-<p>payment-detail-form works!</p>
+<form>
+    <input type="hidden" name="paymentDetailId" [value]="paymentDtlSvc.formData.paymentDetailId">
+
+    <div class="mb-3">
+        <label>Card Owner Name</label>
+        <input class="form-control form-control-lg" 
+        placeholder="Name on Card"
+        name="cardOwnerName"
+        #cardOwnerName = "ngModel"
+        [(ngModel)]="paymentDtlSvc.formData.cardOwnerName">
+    </div>
+
+    <div class="mb-3">
+        <label>Card Number</label>
+        <input class="form-control form-control-lg" 
+        maxlength="16"
+        placeholder="16 Digit Card Number"
+        name="cardNumber"
+        #cardNumber = "ngModel"
+        [(ngModel)]="paymentDtlSvc.formData.cardNumber">
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col-6">
+            <label>Valid Through</label>
+            <input class="form-control form-control-lg"
+            maxlength="5"
+            placeholder="Expiration Date"
+            name="expirationDate"
+            #expirationDate = "ngModel"
+            [(ngModel)]="paymentDtlSvc.formData.expirationDate">
+        </div>
+        
+        <div class="mb-3 col-6">
+            <label>Security Code</label>
+            <input class="form-control form-control-lg"
+            type="password"
+            maxlength="3"
+            placeholder="CVV/CVC"
+            name="securityCode"
+            #securityCode = "ngModel"
+            [(ngModel)]="paymentDtlSvc.formData.securityCode">
+        </div>
+    </div>
+
+    <div class="d-grid">
+        <button class="btn btn-lg btn-success" type="submit">Submit</button>
+    </div>
+</form>
