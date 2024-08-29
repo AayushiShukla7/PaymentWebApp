@@ -45,4 +45,9 @@ export class PaymentDetailService {
   putPaymentDetails() {
     return this.http.put(this.url + "/" + this.formData.paymentDetailId, this.formData);
   }
+
+  // DELETE
+  deletePaymentDetails(id:number) {
+    return this.http.delete(this.url + "/" + id);
+  }
 }

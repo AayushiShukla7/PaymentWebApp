@@ -47,7 +47,7 @@ export class PaymentDetailFormComponent {
     .subscribe({
       next: res => {
         //console.log(res);
-        this.toastr.success('Updated successfully', 'Payment Detail Register');
+        this.toastr.info('Updated successfully', 'Payment Detail Register');
         this.paymentDtlSvc.list = res as PaymentDetail[];
         this.paymentDtlSvc.resetForm(form);
       },
