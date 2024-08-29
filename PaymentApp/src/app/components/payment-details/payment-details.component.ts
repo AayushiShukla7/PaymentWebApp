@@ -20,4 +20,8 @@ export class PaymentDetailsComponent implements OnInit {
     this.paymentDtlSvc.refreshList();
   }
 
+  populateForm(selectedRecord: PaymentDetail){
+    this.paymentDtlSvc.formData = Object.assign({}, selectedRecord);
+  }
+
 }

@@ -1,4 +1,4 @@
-<form>
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="paymentDtlSvc.formSubmitted" novalidate autocomplete="off">
     <input type="hidden" name="paymentDetailId" [value]="paymentDtlSvc.formData.paymentDetailId">
 
     <div class="mb-3">
@@ -7,39 +7,46 @@
         placeholder="Name on Card"
         name="cardOwnerName"
         #cardOwnerName = "ngModel"
-        [(ngModel)]="paymentDtlSvc.formData.cardOwnerName">
+        [(ngModel)]="paymentDtlSvc.formData.cardOwnerName" 
+        required>
     </div>
 
     <div class="mb-3">
         <label>Card Number</label>
         <input class="form-control form-control-lg" 
+        minlength="16"
         maxlength="16"
         placeholder="16 Digit Card Number"
         name="cardNumber"
         #cardNumber = "ngModel"
-        [(ngModel)]="paymentDtlSvc.formData.cardNumber">
+        [(ngModel)]="paymentDtlSvc.formData.cardNumber" 
+        required>
     </div>
 
     <div class="row">
         <div class="mb-3 col-6">
             <label>Valid Through</label>
             <input class="form-control form-control-lg"
+            minlength="5"
             maxlength="5"
             placeholder="Expiration Date"
             name="expirationDate"
             #expirationDate = "ngModel"
-            [(ngModel)]="paymentDtlSvc.formData.expirationDate">
+            [(ngModel)]="paymentDtlSvc.formData.expirationDate" 
+            required>
         </div>
         
         <div class="mb-3 col-6">
             <label>Security Code</label>
             <input class="form-control form-control-lg"
             type="password"
+            minlength="3"
             maxlength="3"
             placeholder="CVV/CVC"
             name="securityCode"
             #securityCode = "ngModel"
-            [(ngModel)]="paymentDtlSvc.formData.securityCode">
+            [(ngModel)]="paymentDtlSvc.formData.securityCode" 
+            required>
         </div>
     </div>
 

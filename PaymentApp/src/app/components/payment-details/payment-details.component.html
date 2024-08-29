@@ -11,7 +11,7 @@
         <ul class="list-group">
             <li class="list-hroup-item d-flex justify-content-between align-items-start mb-2 border px-4 py-3 rounded-3" 
             *ngFor="let pd of paymentDtlSvc.list">
-            <div class="flex-grow-1 mouse-hover">
+            <div class="flex-grow-1 mouse-hover" (click)="populateForm(pd)">
                 <div class="fw-bold">{{ pd.cardOwnerName }}</div>
                 <div>{{ pd.cardNumber }}</div>
                 <div class="fw-bold">{{ pd.expirationDate }}</div>
